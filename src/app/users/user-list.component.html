@@ -1,0 +1,31 @@
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        Felhasználók
+    </div>
+    <div class="panel-body">
+        <div class="table-responsive">
+            <table class="table" *ngIf="userList && userList.length">
+                <thead>
+                    <td>Felhasználónév</td>
+                    <td>Vezetéknév</td>
+                    <td>Keresztnév</td>
+                    <td>Születési dátum</td>
+                    <td>Cím</td>
+                    <td>E-mail</td>
+                    <td>Telefon</td>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let user of userList">
+                        <td>{{user?.username}}</td>
+                        <td>{{user?.firstname}}</td>
+                        <td>{{user?.lastname}}</td>
+                        <td>{{user?.birthdate}}</td>
+                        <td>{{user?.address}}</td>
+                        <td>{{user?.emailAddress}}</td>
+                        <td>{{user?.phoneNumber}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
