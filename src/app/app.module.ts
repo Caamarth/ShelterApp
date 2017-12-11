@@ -10,6 +10,7 @@ import { UsersModule } from './users/users.module'
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
+import { AnimalsModule } from './animals/animals.module';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { NavbarComponent } from './shared/navbar/navbar.component';
       { path: '**', redirectTo: 'users', pathMatch: 'full'}
     ]),
     FormsModule,
-    UsersModule
+    UsersModule,
+    AnimalsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
