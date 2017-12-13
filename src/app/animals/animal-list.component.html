@@ -1,0 +1,35 @@
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        Felhasználók
+    </div>
+    <div class="panel-body">
+        <div class="table-responsive">
+            <table class="table" *ngIf="animalList && animalList.length">
+                <thead>
+                    <td>Kedvenc neve</td>
+                    <td>Fajtája</td>
+                    <td>Születési dátum</td>
+                    <td>Bekerülési dátum</td>
+                    <td>Súlya</td>
+                    <td>Szélessége</td>
+                    <td>Magassága</td>
+                    <td>Hossza</td>
+                    <td>Leírás</td>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let animal of animalList">
+                        <td>{{animal?.name}}</td>
+                        <td>{{animal?.race}}</td>
+                        <td>{{animal?.birthDate}}</td>
+                        <td>{{animal?.admissionDate}}</td>
+                        <td>{{animal?.weight}} kg</td>
+                        <td>{{animal?.width}} cm</td>
+                        <td>{{animal?.height}} cm</td>
+                        <td>{{animal?.length}} cm</td>
+                        <td>{{animal?.description}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
