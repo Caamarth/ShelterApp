@@ -11,6 +11,7 @@ import { UsersModule } from './users/users.module'
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import { AnimalsModule } from './animals/animals.module';
+import { AuthService } from './authentication/auth.service';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,9 @@ import { AnimalsModule } from './animals/animals.module';
     UsersModule,
     AnimalsModule
   ],
-  providers: [],
+  providers: [
+    AuthService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
