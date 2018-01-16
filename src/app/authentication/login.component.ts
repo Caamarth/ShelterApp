@@ -1,8 +1,7 @@
 import { Component } from '@angular/core';
 import { AuthService } from './auth.service';
 import { Router } from '@angular/router';
-import { FormBuilder, FormGroup } from '@angular/forms';
-import { Validators } from '@angular/forms/src/validators';
+import { FormsModule, ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
     templateUrl: 'login.component.html',
@@ -12,6 +11,7 @@ export class LoginComponent {
 
     loginForm: FormGroup;
     errorMessage: string;
+    loginInvalid = false;
 
     constructor(
         private _authService: AuthService,
@@ -19,14 +19,22 @@ export class LoginComponent {
         private _fb: FormBuilder
     ) {
         this.loginForm = this._fb.group({
-            username: ['', Validators.required],
-            password: ['', Validators.required]
+            Username: ['', Validators.required],
+            Password: ['', Validators.required]
         })
     }
 
     login() {
+        this.loginInvalid = false;
         if (!this.loginForm.valid) {
-
+            this.errorMessage = 'A mezők kitöltése kötelező!';
+            this.loginInvalid = true;
         }
+        this._authService.login(this.loginForm.value).subscribe(resp => {
+            console.log(resp);
+            sessionStorage.setItem('token',resp.token);
+            this._authService.setLoggedInUser(resp.user);
+            this._router.navigate(['animals']);
+        });
     }
 }

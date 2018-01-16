@@ -15,8 +15,12 @@ export class UsersService {
     ) { }
 
     getUsers(): Observable<any[]> {
-        return this._http.get(environment.baseAddress + '/api/user/')
-            .map((response: Response) => { return response.json() })
-            .catch(error => { return error });
+        let headers = new Headers();
+        headers.append('Authorization','Bearer ' + sessionStorage.getItem('token'));
+        let options = new RequestOptions({
+            headers: headers
+        });
+        return this._http.get(environment.baseAddress + '/api/user/', options)
+            .map((response: Response) => { return response.json() });
     }
 }

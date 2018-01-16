@@ -16,7 +16,6 @@ export class AnimalListComponent {
     ) {
         this._animalService.getAnimals().subscribe(resp => {
             this.animalList = resp;
-            console.log(this.animalList);
         }, error => console.log(error.status));
     }
  }

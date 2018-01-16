@@ -1,0 +1,16 @@
+<div class="login">
+    <form [formGroup]="loginForm" (submit)="login()">
+        <div class="form-group">
+            <label for="username">Felhasználónév</label>
+            <input class="form-control" formControlName="Username">
+            <label for="password">Jelszó</label>
+            <input type='password' class="form-control" formControlName="Password">
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn center-block" [disabled]="!loginForm.valid">
+                Belépés
+            </button>
+        </div>
+    </form>
+    <div *ngIf="loginInvalid" class="alert alert-danger">{{errorMessage}}</div>
+</div>

@@ -13,6 +13,7 @@ export class UserListComponent {
         private _userService: UsersService
     ) {
         this._userService.getUsers().subscribe(resp => {
+            console.log(resp);
             this.userList = resp;
             console.log(this.userList);
         }, error => { console.log(error)} );
