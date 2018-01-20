@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { AnimalListComponent } from './animal-list.component';
 import { AnimalService } from './animal.service';
+import { AnimalCardComponent } from './animalcard/animalcard.component';
 
 @NgModule({
     imports: [
@@ -15,7 +16,8 @@ import { AnimalService } from './animal.service';
         ])
     ],
     declarations: [
-        AnimalListComponent
+        AnimalListComponent,
+        AnimalCardComponent
     ],
     providers: [
         AnimalService

@@ -1,11 +1,11 @@
 <div class="navbar navbar-default">
     <div class="container-fluid">
         <div class="navbar-header">
-            <a class="navbar-brand">Shelter</a>
+            <a class="navbar-brand">Állatmenhely</a>
         </div>
 
         <div class="collapse navbar-collapse">
-            <ul class="nav navbar-nav">
+            <ul class="nav navbar-nav" *ngIf="isAuthenticated()">
                 <li>
                     <a [routerLink]="['users']"
                     routerLinkActive="active"
@@ -22,17 +22,22 @@
                     [routerLinkActiveOptions]="{exact:true}">Igénylések</a>
                 </li>
             </ul>
+            <ul class="nav navbar-nav">
+                <li *ngIf="!isAuthenticated()">
+                    <a [routerLink]="['login']"
+                    routerLinkActive="active"
+                    [routerLinkActiveOptions]="{exact:true}">Belépés</a>
+                </li>
+                <li *ngIf="isAuthenticated()">
+                    <a [routerLink]="['login']"
+                    routerLinkActive="active"
+                    [routerLinkActiveOptions]="{exact:true}">{{getUserName()}}</a>
+                </li>
+                <li *ngIf="isAuthenticated()">
+                    <button class="btn" (click)="logout()">Kilépés</button>
+                </li>
+            </ul>
             
-            <!-- <div class="navbar-header navbar-right">
-                <ul class="nav navbar-nav">
-                    <li>
-                        <button class="btn" (click)="getSelf()">{{getUserName()}}</button>
-                    </li>
-                    <li>
-                        <button class="btn"(click)="logout()">Logout</button>
-                    </li>
-                </ul>
-            </div> -->
         </div>
     </div>
 </div>

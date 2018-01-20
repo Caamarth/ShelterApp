@@ -23,4 +23,49 @@ export class UsersService {
         return this._http.get(environment.baseAddress + '/api/user/', options)
             .map((response: Response) => { return response.json() });
     }
+
+    getUser(id): Observable<any> {
+        let headers = new Headers();
+        headers.append('Authorization','Bearer ' + sessionStorage.getItem('token'));
+        let options = new RequestOptions({
+            headers: headers
+        });
+        return this._http.get(environment.baseAddress + '/api/user/' + id, options)
+            .map((response: Response) =>{ return response.json() });
+    }
+
+    registerUser(newuser): Observable<any> {
+        return this._http.post(environment.baseAddress + '/api/user/', newuser)
+            .map((response: Response) => { return response.json() });
+    }
+
+    createUser(newuser): Observable<any> {
+        let headers = new Headers();
+        headers.append('Authorization','Bearer ' + sessionStorage.getItem('token'));
+        let options = new RequestOptions({
+            headers: headers
+        });
+        return this._http.post(environment.baseAddress + '/api/user/', newuser, options)
+            .map((response: Response) => { return response.json() });
+    }
+
+    updateUser(updatedUser): Observable<any> {
+        let headers = new Headers();
+        headers.append('Authorization','Bearer ' + sessionStorage.getItem('token'));
+        let options = new RequestOptions({
+            headers: headers
+        });
+        return this._http.put(environment.baseAddress + '/api/user/' + updatedUser.id, updatedUser, options)
+            .map((response: Response) => { return response.json() });
+    }
+
+    deleteUser(id): Observable<any> {
+        let headers = new Headers();
+        headers.append('Authorization','Bearer ' + sessionStorage.getItem('token'));
+        let options = new RequestOptions({
+            headers: headers
+        });
+        return this._http.delete(environment.baseAddress + 'api/user/' + id, options)
+            .map((response: Response) => { return response.json() });
+    }
 }

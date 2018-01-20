@@ -1,0 +1,18 @@
+.card-container {
+    float: left;
+    width: 40%;
+    border-color: blue;
+    border-width: 2px;
+    border-style: solid;
+    margin: 2.5%;
+}
+
+.card-header {
+    padding: 8px;
+    font-size: 16pt;
+}
+
+.card-content {
+    padding: 8px;
+    font-size: 12pt;
+}

@@ -34,6 +34,7 @@ export class LoginComponent {
             console.log(resp);
             sessionStorage.setItem('token',resp.token);
             this._authService.setLoggedInUser(resp.user);
+            sessionStorage.setItem('userName',resp.user.username);
             this._router.navigate(['animals']);
         });
     }

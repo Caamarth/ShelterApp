@@ -1,9 +1,7 @@
 <div class="panel panel-primary">
-    <div class="panel-heading">
-        Felhasználók
-    </div>
-    <div class="panel-body">
-        <div class="table-responsive">
+    <div class="panel-body" *ngFor="let animal of animalList">
+        <animal-card [animal]="animal"></animal-card>
+        <!--<div class="table-responsive">
             <table class="table" *ngIf="animalList && animalList.length">
                 <thead>
                     <td>Kedvenc neve</td>
@@ -30,6 +28,6 @@
                     </tr>
                 </tbody>
             </table>
-        </div>
+        </div>-->
     </div>
 </div>

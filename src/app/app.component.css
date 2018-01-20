@@ -1,0 +1,10 @@
+.container {
+    width: 80%;
+    margin: auto;
+}
+
+.stage {
+    height: 100%;
+    background-color: rgba(0, 204, 255, 0.774);
+}
+

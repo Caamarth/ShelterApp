@@ -3,11 +3,13 @@ import { LoginModel } from './login.model';
 import { Http } from '@angular/http';
 import { environment } from '../../environments/environment';
 import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/observable/of';
+import { UserModel } from '../users/users.model';
 
 @Injectable()
 export class AuthService {
 
-    loggedInUser;
+    loggedInUser: UserModel;
 
     constructor(
         private _http: Http
@@ -26,5 +28,18 @@ export class AuthService {
 
     setLoggedInUser(user: any) {
         this.loggedInUser = user;
+    }
+
+    userIsAuthenticated() {
+        return this.loggedInUser ? true : false;
+    }
+
+    getUserName() {
+        return sessionStorage.getItem('userName');
+    }
+
+    logout() {
+        this.loggedInUser = null;
+        sessionStorage.removeItem('token');
     }
 }

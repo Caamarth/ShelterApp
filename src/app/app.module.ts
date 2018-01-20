@@ -28,8 +28,8 @@ import { LoginComponent } from './authentication/login.component';
     RouterModule.forRoot([
       { path: 'app', component: AppComponent },
       { path: 'login', component: LoginComponent},
-      { path: '', redirectTo: 'login', pathMatch: 'full'},
-      { path: '**', redirectTo: 'login', pathMatch: 'full'}
+      { path: '', redirectTo: 'animals', pathMatch: 'full'},
+      { path: '**', redirectTo: 'animals', pathMatch: 'full'}
     ]),
     FormsModule,
     ReactiveFormsModule,
