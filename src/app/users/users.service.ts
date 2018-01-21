@@ -34,11 +34,6 @@ export class UsersService {
             .map((response: Response) =>{ return response.json() });
     }
 
-    registerUser(newuser): Observable<any> {
-        return this._http.post(environment.baseAddress + '/api/user/', newuser)
-            .map((response: Response) => { return response.json() });
-    }
-
     createUser(newuser): Observable<any> {
         let headers = new Headers();
         headers.append('Authorization','Bearer ' + sessionStorage.getItem('token'));
@@ -55,6 +50,7 @@ export class UsersService {
         let options = new RequestOptions({
             headers: headers
         });
+        console.log(updatedUser);
         return this._http.put(environment.baseAddress + '/api/user/' + updatedUser.id, updatedUser, options)
             .map((response: Response) => { return response.json() });
     }

@@ -13,12 +13,14 @@ import { NavbarComponent } from './shared/navbar/navbar.component';
 import { AnimalsModule } from './animals/animals.module';
 import { AuthService } from './authentication/auth.service';
 import { LoginComponent } from './authentication/login.component';
+import { RegisterComponent } from './authentication/register.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
-    LoginComponent
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
@@ -28,6 +30,7 @@ import { LoginComponent } from './authentication/login.component';
     RouterModule.forRoot([
       { path: 'app', component: AppComponent },
       { path: 'login', component: LoginComponent},
+      { path: 'register', component: RegisterComponent},
       { path: '', redirectTo: 'animals', pathMatch: 'full'},
       { path: '**', redirectTo: 'animals', pathMatch: 'full'}
     ]),

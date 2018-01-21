@@ -13,6 +13,7 @@
                     <td>Cím</td>
                     <td>E-mail</td>
                     <td>Telefon</td>
+                    <td>Lehetőségek</td>
                 </thead>
                 <tbody>
                     <tr *ngFor="let user of userList">
@@ -23,6 +24,14 @@
                         <td>{{user?.address}}</td>
                         <td>{{user?.emailAddress}}</td>
                         <td>{{user?.phoneNumber}}</td>
+                        <td>
+                            <button class="btn btn-primary" (click)="openUser(user.id)">
+                                <i class="fa fa-pencil"></i>
+                            </button>
+                            <button class="btn btn-primary" (click)="deleteUser(user.id)">
+                                <i class="fa fa-times"></i>
+                            </button>
+                        </td>
                     </tr>
                 </tbody>
             </table>

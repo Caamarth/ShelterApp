@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { UsersService } from './users.service'
+import { Router } from '@angular/router';
 
 @Component({
     templateUrl: './user-list.component.html',
@@ -10,12 +11,27 @@ export class UserListComponent {
     userList;
 
     constructor(
-        private _userService: UsersService
+        private _userService: UsersService,
+        private _router: Router
     ) {
+        this.getUsers();
+     }
+
+     getUsers() {
         this._userService.getUsers().subscribe(resp => {
-            console.log(resp);
             this.userList = resp;
-            console.log(this.userList);
         }, error => { console.log(error)} );
+     }
+
+     openUser(id) {
+        this._router.navigate(['user', id]);
+     }
+
+     deleteUser(id) {
+         this._userService.deleteUser(id).subscribe(resp => {
+             if (resp) {
+                 this.getUsers();
+             }
+         }, error => console.log(error));
      }
 }

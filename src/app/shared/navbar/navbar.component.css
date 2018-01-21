@@ -9,3 +9,7 @@
     margin: auto;
     margin-bottom: 12px;
 }
+
+.navbar-right {
+    float: right;
+}

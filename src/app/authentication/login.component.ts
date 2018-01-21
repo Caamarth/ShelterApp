@@ -31,7 +31,6 @@ export class LoginComponent {
             this.loginInvalid = true;
         }
         this._authService.login(this.loginForm.value).subscribe(resp => {
-            console.log(resp);
             sessionStorage.setItem('token',resp.token);
             this._authService.setLoggedInUser(resp.user);
             sessionStorage.setItem('userName',resp.user.username);

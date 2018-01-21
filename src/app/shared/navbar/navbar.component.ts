@@ -12,7 +12,9 @@ export class NavbarComponent {
 
     userName: string;
 
-    constructor (private _authService: AuthService) {
+    constructor (
+        private _authService: AuthService,
+        private _router: Router) {
 
     }
 
@@ -26,5 +28,9 @@ export class NavbarComponent {
 
     logout() {
         this._authService.logout();
+    }
+
+    getSelf() {
+        return this._authService.loggedInUser.id;
     }
 }

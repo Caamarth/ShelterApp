@@ -1,9 +1,10 @@
 import { Injectable } from '@angular/core';
 import { LoginModel } from './login.model';
-import { Http } from '@angular/http';
+import { Http, Response } from '@angular/http';
 import { environment } from '../../environments/environment';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/observable/of';
+import 'rxjs/add/operator/map';
 import { UserModel } from '../users/users.model';
 
 @Injectable()
@@ -41,5 +42,10 @@ export class AuthService {
     logout() {
         this.loggedInUser = null;
         sessionStorage.removeItem('token');
+    }
+
+    registerUser(register: LoginModel) {
+        return this._http.post(environment.baseAddress + '/api/user/register', register)
+            .map((response: Response) => { return response.json() });
     }
 }
