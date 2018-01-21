@@ -48,4 +48,8 @@ export class AuthService {
         return this._http.post(environment.baseAddress + '/api/user/register', register)
             .map((response: Response) => { return response.json() });
     }
+
+    isAdminUser() {
+        return this.loggedInUser.role === 'Admin' ? true : false;
+    }
 }
