@@ -40,4 +40,8 @@ export class AnimalListBasicComponent {
             }
         }, error => { console.log(error)} );
     }
+
+    create() {
+        this._router.navigate(['animals/create']);
+    }
 }

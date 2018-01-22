@@ -3,6 +3,9 @@
         Állatok (Admin felület)
     </div>
     <div class="panel-body">
+        <button class="btn" (click)="create()">
+            Létrehozás
+        </button>
         <div class="table-responsive">
             <table class="table" *ngIf="animallist && animallist.length">
                 <thead>

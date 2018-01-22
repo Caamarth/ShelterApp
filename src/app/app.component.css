@@ -1,10 +1,13 @@
 .container {
+    min-height: 100%;
+    height: auto !important;
+    height: 100;
     width: 90%;
     margin: auto;
 }
 
 .stage {
-    height: 800px;
+    height: 2000px;
     background-color: rgba(0, 204, 255, 0.774);
 }
 

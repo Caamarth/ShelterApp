@@ -1,0 +1,69 @@
+<form [formGroup]="animalForm" (submit)="createAnimal()">
+    <div class="container-create">
+        <div class="form-group">
+            <label for="name">Név</label>
+            <em *ngIf="!animalForm.valid">Kötelező</em>
+            <input class="form-control form-part" formControlName="name">
+        </div>
+        <div class="form-group">
+            <label for="sex">Neme</label>
+            <em *ngIf="!animalForm.valid">Kötelező</em>
+            <input class="form-control form-part" formControlName="sex">
+        </div>
+        <div class="form-group">
+            <label for="race">Fajta</label>
+            <em *ngIf="!animalForm.valid">Kötelező</em>
+            <input class="form-control form-part" formControlName="race">
+        </div>
+        <div class="form-group">
+            <label for="raceType">Fajtípus</label>
+            <em *ngIf="!animalForm.valid">Kötelező</em>
+            <input class="form-control form-part" formControlName="raceType">
+        </div>
+        <div class="form-group">
+            <label for="birthDate">Születési Dátum</label>
+            <em *ngIf="!animalForm.valid">Kötelező</em>
+            <input type="date" class="form-control form-date" formControlName="birthDate">
+        </div>
+        <div class="form-group">
+            <label for="admissionDate">Bekerülés Dátuma</label>
+            <em *ngIf="!animalForm.valid">Kötelező</em>
+            <input type="date" class="form-control form-date" formControlName="admissionDate">
+        </div>
+        <div class="form-group">
+            <label for="weight">Súly</label>
+            <em *ngIf="!animalForm.valid">Kötelező</em>
+            <input class="form-control form-numeric" formControlName="weight">
+        </div>
+        <div class="form-group">
+            <label for="width">Szélesség</label>
+            <em *ngIf="!animalForm.valid">Kötelező</em>
+            <input class="form-control form-numeric" formControlName="width">
+        </div>
+        <div class="form-group">
+            <label for="height">Magasság</label>
+            <em *ngIf="!animalForm.valid">Kötelező</em>
+            <input class="form-control form-numeric" formControlName="height">
+        </div>
+        <div class="form-group">
+            <label for="length">Hossz</label>
+            <em *ngIf="!animalForm.valid">Kötelező</em>
+            <input class="form-control form-numeric" formControlName="length">
+        </div>
+        <div class="form-group form-part">
+            <label for="description">Leírás</label>
+            <textarea class="form-control" formControlName="description"></textarea>
+        </div>  
+        <div class="form-group">
+            <label for="classification">Tulajdonság</label>
+            <em *ngIf="!animalForm.valid">Kötelező</em>
+            <input class="form-control form-part" formControlName="classification">
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary"
+            [disabled]="!animalForm.valid">Mentés</button>
+            <button class="btn btn-primary" (click)="cancel()">Mégse</button>
+        </div>
+    </div>
+
+</form>

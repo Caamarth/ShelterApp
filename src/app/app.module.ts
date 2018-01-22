@@ -14,6 +14,7 @@ import { AnimalsModule } from './animals/animals.module';
 import { AuthService } from './authentication/auth.service';
 import { LoginComponent } from './authentication/login.component';
 import { RegisterComponent } from './authentication/register.component';
+import { ApplicationModule } from './application/application.module';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { RegisterComponent } from './authentication/register.component';
     FormsModule,
     ReactiveFormsModule,
     UsersModule,
-    AnimalsModule
+    AnimalsModule,
+    ApplicationModule
   ],
   providers: [
     AuthService

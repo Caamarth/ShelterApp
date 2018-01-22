@@ -1,6 +1,6 @@
 .card-container {
     float: left;
-    width: 40%;
+    width: 80%;
     border-color: blue;
     border-width: 2px;
     border-style: solid;
@@ -9,10 +9,10 @@
 
 .card-header {
     padding: 8px;
-    font-size: 16pt;
+    font-size: 14pt;
 }
 
 .card-content {
     padding: 8px;
-    font-size: 12pt;
+    font-size: 10pt;
 }

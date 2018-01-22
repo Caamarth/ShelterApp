@@ -23,6 +23,7 @@ export class AnimalService {
     }
 
     createAnimal(animal): Observable<any> {
+        console.log(animal);
         return this._http.post(environment.baseAddress + '/api/animal/', animal)
             .map((response: Response) => { return response.json() });
     }

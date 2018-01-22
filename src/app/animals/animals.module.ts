@@ -7,6 +7,7 @@ import { AnimalService } from './animal.service';
 import { AnimalCardComponent } from './animalcard/animalcard.component';
 import { AnimalListBasicComponent } from './animallistbasic/animallist-basic.component';
 import { AnimalDetailsComponent } from './animal-details.component';
+import { AnimalCreateComponent } from './animal-create.component';
 
 @NgModule({
     imports: [
@@ -16,6 +17,7 @@ import { AnimalDetailsComponent } from './animal-details.component';
         RouterModule.forChild([
             { path: 'animals', component: AnimalListComponent },
             { path: 'animals/basic', component: AnimalListBasicComponent },
+            { path: 'animals/create', component: AnimalCreateComponent },
             { path: 'animal/:id', component: AnimalDetailsComponent }
         ])
     ],
@@ -23,7 +25,8 @@ import { AnimalDetailsComponent } from './animal-details.component';
         AnimalListComponent,
         AnimalCardComponent,
         AnimalListBasicComponent,
-        AnimalDetailsComponent
+        AnimalDetailsComponent,
+        AnimalCreateComponent
     ],
     providers: [
         AnimalService
