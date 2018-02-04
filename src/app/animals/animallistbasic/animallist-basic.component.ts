@@ -30,7 +30,7 @@ export class AnimalListBasicComponent {
     }
 
     openAnimal(id) {
-        this._router.navigate(['animal', id]);
+        this._router.navigate(['animal','update', id]);
     }
 
     deleteAnimal(id) {

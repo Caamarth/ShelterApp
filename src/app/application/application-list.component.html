@@ -1,0 +1,34 @@
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        Pályázatok
+    </div>
+    <div class="panel-body">
+        <div class="table-responsive">
+            <table class="table" *ngIf="applies && applies.length">
+                <thead>
+                    <td>Felhasználónév</td>
+                    <td>Állat neve</td>
+                    <td>Jelentkezés dátuma</td>
+                    <td>Állapot</td>
+                    <td>Lehetőségek</td>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let apply of applies">
+                        <td>{{apply?.userEntity?.username}}</td>
+                        <td>{{apply?.animalEntity?.name}}</td>
+                        <td>{{apply?.publishDate}}</td>
+                        <td>{{apply?.applyStatus}}</td>
+                        <td>
+                            <button class="btn btn-primary" (click)="openApply(apply.id)">
+                                <i class="fa fa-pencil"></i>
+                            </button>
+                            <button class="btn btn-primary" (click)="deleteApply(apply.id)">
+                                <i class="fa fa-times"></i>
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

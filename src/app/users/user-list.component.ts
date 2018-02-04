@@ -28,10 +28,11 @@ export class UserListComponent {
      }
 
      deleteUser(id) {
+         console.log(id);
          this._userService.deleteUser(id).subscribe(resp => {
              if (resp) {
                  this.getUsers();
              }
-         }, error => console.log(error));
+         }, error => { console.log(error); });
      }
 }

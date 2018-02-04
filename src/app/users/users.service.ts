@@ -61,7 +61,7 @@ export class UsersService {
         let options = new RequestOptions({
             headers: headers
         });
-        return this._http.delete(environment.baseAddress + 'api/user/' + id, options)
+        return this._http.delete(environment.baseAddress + '/api/user/' + id, options)
             .map((response: Response) => { return response.json() });
     }
 }
