@@ -1,0 +1,14 @@
+<form [formGroup]="form" (submit)="submit()">
+        <div class="container-create">
+            <div class="form-group">
+                <label for="description">Leírás</label>
+                <em *ngIf="!form.valid">Kötelező</em>
+                <textarea class="form-control form-part" formControlName="description"></textarea>
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary"
+                [disabled]="!form.valid">Mentés</button>
+                <button class="btn btn-primary" (click)="cancel()">Mégse</button>
+            </div>
+        </div>
+</form>

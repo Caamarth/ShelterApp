@@ -1,0 +1,42 @@
+.form-parts {
+    float: left;
+    width: 40%;
+    margin: 20px;
+}
+
+.form-part {
+    width: 80%
+}
+
+.form-date {
+    width: 20%;
+}
+
+.form-numeric {
+    width: 30%;
+}
+
+.main-label {
+    font-size: 20pt;
+    padding: 10px;
+}
+
+.container-create {
+    margin: auto;
+    width: 80%;
+}
+
+textarea {
+    resize: none;
+    width: 90%;
+    height: 140px;
+}
+
+.btn {
+    margin-top: 20px;
+}
+
+em {
+    color: red;
+    margin-left: 20px;
+}

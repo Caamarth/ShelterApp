@@ -14,7 +14,27 @@ export class AnimalService {
 
     getAnimals(): Observable<any[]> {
         return this._http.get(environment.baseAddress + '/api/animal/')
-            .map((response: Response) => { return response.json() })
-            .catch(error =>{ return error });
+            .map((response: Response) => { return response.json() });
+    }
+
+    getAnimal(id): Observable<any> {
+        return this._http.get(environment.baseAddress + '/api/animal/' + id)
+            .map((response: Response) => { return response.json() });
+    }
+
+    createAnimal(animal): Observable<any> {
+        console.log(animal);
+        return this._http.post(environment.baseAddress + '/api/animal/', animal)
+            .map((response: Response) => { return response.json() });
+    }
+
+    updateAnimal(animal): Observable<any> {
+        return this._http.put(environment.baseAddress + '/api/animal/' + animal.id, animal)
+            .map((response: Response) => { return response.json() });
+    }
+
+    deleteAnimal(id): Observable<any> {
+        return this._http.delete(environment.baseAddress + '/api/animal/'+ id)
+            .map((response: Response) => { return response.json() });
     }
 }

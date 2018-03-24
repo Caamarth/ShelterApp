@@ -1,0 +1,13 @@
+.container {
+    min-height: 100%;
+    height: auto !important;
+    height: 100;
+    width: 95%;
+    margin: auto;
+}
+
+.stage {
+    height: 2000px;
+    background-color: rgba(0, 204, 255, 0.774);
+}
+

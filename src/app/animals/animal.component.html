@@ -1,0 +1,55 @@
+<div class="table">
+    <table>
+        <thead>
+
+        </thead>
+        <tbody>
+            <tr>
+                <td>Név:</td>
+                <td>{{animal?.name}}</td>
+            </tr>
+            <tr>
+                <td>Neme:</td>
+                <td>{{animal?.sex}}</td>
+            </tr>
+            <tr>
+                <td>Fajta:</td>
+                <td>{{animal?.race}}</td>
+            </tr>
+            <tr>
+                <td>Születési dátum:</td>
+                <td>{{animal?.birthDate}}</td>
+            </tr>
+            <tr>
+                <td>Bekerülés ideje:</td>
+                <td>{{animal?.admissionDate}}</td>
+            </tr>
+            <tr>
+                <td>Súlya:</td>
+                <td>{{animal?.weight}}</td>
+            </tr>
+            <tr>
+                <td>Szélessége:</td>
+                <td>{{animal?.width}}</td>
+            </tr>
+            <tr>
+                <td>Magassága:</td>
+                <td>{{animal?.height}}</td>
+            </tr>
+            <tr>
+                <td>Hossza:</td>
+                <td>{{animal?.length}}</td>
+            </tr>
+            <tr>
+                <td>Leírás:</td>
+                <td>{{animal?.description}}</td>
+            </tr>
+            <tr>
+                <td>Természete:</td>
+                <td>{{animal?.classification}}</td>
+            </tr>
+        </tbody>
+    </table>
+    <button class="btn" (click)="applyForAnimal(animal.id)">Befogadom</button>
+    <button class="btn" (click)="returnToMain()">Vissza</button>
+</div>

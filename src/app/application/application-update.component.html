@@ -1,0 +1,28 @@
+<form [formGroup]="applicationForm" (submit)="updateApplication()">
+    <div class="container-create">
+        <div class="form-group">
+            <label for="applyStatus">Állapot</label>
+            <select class="form-control form-part" formControlName="applyStatus"
+            [disabled]="isOwnApplication()">
+                <option value="0">Elküldve</option>
+                <option value="1">Bírálás alatt</option>
+                <option value="2">Több információ szükséges</option>
+                <option value="3">Elutasítva</option>
+                <option value="4">Elfogadva</option>
+                <option value="5">Visszavonva</option>
+        </select>
+        </div>
+        <div class="form-group">
+            <label for="description">Leírás</label>
+            <input class="form-control form-part" formControlName="description">
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary"
+            [disabled]="!applicationForm.valid">Mentés</button>
+            <button class="btn btn-primary" (click)="cancel()">Mégse</button>
+            <button class="btn btn-primary" (click)="delete()"
+            [disabled]="!isOwnApplication()">Törlés</button>
+        </div>
+    </div>
+
+</form>

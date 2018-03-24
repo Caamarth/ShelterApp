@@ -1,0 +1,31 @@
+<div class="panel panel-primary">
+    <div class="panel-body">
+        <button class="btn" (click)="create()">
+            Létrehozás
+        </button>
+        <div class="table-responsive">
+            <table class="table" *ngIf="studies && studies.length">
+                <thead>
+                    <td>Cím</td>
+                    <td>Létrehozás dátuma</td>
+                    <td>Leírás</td>
+                    <td>Értékelés</td>
+                    <td>Opciók</td>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let study of studies">
+                        <td>{{study?.title}}</td>
+                        <td>{{study?.publishDate}}</td>
+                        <td>{{study?.description}}</td>
+                        <td>{{study?.rating}}</td>
+                        <td>
+                            <button class="btn btn-primary" (click)="openStudy(study.id)">
+                                <i class="fa fa-pencil"></i>
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

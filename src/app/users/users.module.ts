@@ -4,11 +4,13 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { UserListComponent } from './user-list.component';
 import { UsersService } from './users.service';
+import { UserDetailsComponent } from './user-details.component';
 
 @NgModule({
     imports: [
         RouterModule.forChild([
-            { path: 'users', component: UserListComponent }
+            { path: 'users', component: UserListComponent },
+            { path: 'user/:id', component: UserDetailsComponent }
         ]),
         FormsModule,
         ReactiveFormsModule,
@@ -16,7 +18,8 @@ import { UsersService } from './users.service';
     ],
     exports: [],
     declarations: [
-        UserListComponent
+        UserListComponent,
+        UserDetailsComponent
     ],
     providers: [
         UsersService

@@ -1,0 +1,28 @@
+<div>
+    <table>
+        <tbody>
+            <tr>
+                <td>Jelentkezés ideje</td>
+                <td>{{application?.publishDate}}</td>
+            </tr>
+            <tr>
+                <td>Állapot</td>
+                <td>{{application?.applyStatus}}</td>
+            </tr>
+            <tr>
+                <td>Jelentkező neve</td>
+                <td>{{application?.userEntity?.firstname}}{{application?.userEntity?.lastname}}</td>
+            </tr>
+            <tr>
+                <td>Állat neve</td>
+                <td>{{application?.animalEntity?.name}}</td>
+            </tr>
+            <tr>
+                <td>Leírás</td>
+                <td>{{application?.description}}</td>
+            </tr>
+        </tbody>
+        
+    </table>
+    <study-template [studies]="studies"></study-template>
+</div>

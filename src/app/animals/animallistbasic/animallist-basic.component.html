@@ -1,0 +1,41 @@
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        Állatok (Admin felület)
+    </div>
+    <div class="panel-body">
+        <button class="btn" (click)="create()">
+            Létrehozás
+        </button>
+        <div class="table-responsive">
+            <table class="table" *ngIf="animallist && animallist.length">
+                <thead>
+                    <td>Név</td>
+                    <td>Neme</td>
+                    <td>Fajta</td>
+                    <td>Besorolás</td>
+                    <td>Születési dátum</td>
+                    <td>Bekerülési dátum</td>
+                    <td>Lehetőségek</td>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let animal of animallist">
+                        <td>{{animal?.name}}</td>
+                        <td>{{determineSex(animal?.sex)}}</td>
+                        <td>{{animal?.race}}</td>
+                        <td>{{animal?.raceType}}</td>
+                        <td>{{animal?.birthDate}}</td>
+                        <td>{{animal?.admissionDate}}</td>
+                        <td>
+                            <button class="btn btn-primary" (click)="openAnimal(animal.id)">
+                                <i class="fa fa-pencil"></i>
+                            </button>
+                            <button class="btn btn-primary" (click)="deleteAnimal(animal.id)">
+                                <i class="fa fa-times"></i>
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

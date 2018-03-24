@@ -4,3 +4,12 @@
     border-width: 0.5px;
     border-color: grey;
 }
+
+.navbar-default {
+    margin: auto;
+    margin-bottom: 12px;
+}
+
+.navbar-right {
+    float: right;
+}
