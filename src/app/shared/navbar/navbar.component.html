@@ -8,7 +8,7 @@
         </div>
 
         <div class="collapse navbar-collapse">
-            <ul class="nav navbar-nav" *ngIf="isAuthenticated()">
+            <ul class="nav navbar-nav" *ngIf="isAdminUser()">
                 <li>
                     <a [routerLink]="['users']"
                     routerLinkActive="active"

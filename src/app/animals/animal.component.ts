@@ -34,10 +34,10 @@ export class AnimalComponent implements OnInit {
     ngOnInit(){}
 
     applyForAnimal(id) {
-        this._router.navigate(['']);
+        this._router.navigate(['apply','create', id]);
     }
 
-    return() {
+    returnToMain() {
         this._router.navigate(['']);
     }
 }

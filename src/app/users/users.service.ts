@@ -16,7 +16,7 @@ export class UsersService {
 
     getUsers(): Observable<any[]> {
         let headers = new Headers();
-        headers.append('Authorization','Bearer ' + sessionStorage.getItem('token'));
+        headers.append('Authorization','Bearer ' + localStorage.getItem('token'));
         let options = new RequestOptions({
             headers: headers
         });
@@ -26,7 +26,7 @@ export class UsersService {
 
     getUser(id): Observable<any> {
         let headers = new Headers();
-        headers.append('Authorization','Bearer ' + sessionStorage.getItem('token'));
+        headers.append('Authorization','Bearer ' + localStorage.getItem('token'));
         let options = new RequestOptions({
             headers: headers
         });
@@ -36,7 +36,7 @@ export class UsersService {
 
     createUser(newuser): Observable<any> {
         let headers = new Headers();
-        headers.append('Authorization','Bearer ' + sessionStorage.getItem('token'));
+        headers.append('Authorization','Bearer ' + localStorage.getItem('token'));
         let options = new RequestOptions({
             headers: headers
         });
@@ -46,7 +46,7 @@ export class UsersService {
 
     updateUser(updatedUser): Observable<any> {
         let headers = new Headers();
-        headers.append('Authorization','Bearer ' + sessionStorage.getItem('token'));
+        headers.append('Authorization','Bearer ' + localStorage.getItem('token'));
         let options = new RequestOptions({
             headers: headers
         });
@@ -57,7 +57,7 @@ export class UsersService {
 
     deleteUser(id): Observable<any> {
         let headers = new Headers();
-        headers.append('Authorization','Bearer ' + sessionStorage.getItem('token'));
+        headers.append('Authorization','Bearer ' + localStorage.getItem('token'));
         let options = new RequestOptions({
             headers: headers
         });

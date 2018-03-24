@@ -32,16 +32,23 @@ export class AuthService {
     }
 
     userIsAuthenticated() {
-        return this.loggedInUser ? true : false;
+        return localStorage.getItem('userName') ? true : false;
     }
 
     getUserName() {
-        return sessionStorage.getItem('userName');
+        return localStorage.getItem('userName');
+    }
+
+    getId() {
+        if (this.loggedInUser) {
+            return this.loggedInUser.id;
+        }
     }
 
     logout() {
         this.loggedInUser = null;
-        sessionStorage.removeItem('token');
+        localStorage.clear();
+        
     }
 
     registerUser(register: LoginModel) {
@@ -50,6 +57,9 @@ export class AuthService {
     }
 
     isAdminUser() {
-        return this.loggedInUser.role === 'Admin' ? true : false;
+        if(this.userIsAuthenticated()) {
+            return localStorage.getItem('role') === 'Admin' ? true : false;
+        }
+        return false;
     }
 }

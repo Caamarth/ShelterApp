@@ -1,8 +1,64 @@
 .panel-body {
-    width: 70%;
-    margin: auto;
+    width: 100%;
+    padding: 0px;
+}
+
+.panel-body-container {
+    float: left;
+    width: 65%;
+    border: 1px solid;
+    border-color: gray;
+    background-color: linen;
+    margin-left: 5px;
+}
+
+.panel-primary {
+    position: relative;
+    border: none;
 }
 
 .btn {
     margin: 10px 10px 10px 10px;
+    border: 1px solid;
+}
+
+.filter {
+    float: left;
+    width: 30%;
+    height: 100%;
+    border: 1px solid;
+    border-color: gray;
+    background-color: linen;
+}
+
+.filter-header {
+    width: 150px;
+    padding-left: 10px;
+}
+
+.filter-value {
+    float: right;
+}
+
+h4 {
+    padding: 10px;
+}
+
+.row {
+    width: 100%;
+}
+
+.filter-value-container {
+    width: 350px;
+    float: right;
+}
+
+.form-parts {
+    float: left;
+    width: 40%;
+    margin: 20px;
+}
+
+.form-part {
+    width: 80%
 }

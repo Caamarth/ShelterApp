@@ -22,6 +22,10 @@ export class NavbarComponent {
         return this._authService.userIsAuthenticated();
     }
 
+    isAdminUser() {
+        return this._authService.isAdminUser();
+    }
+
     getUserName() {
         return this._authService.getUserName();
     }
@@ -31,6 +35,6 @@ export class NavbarComponent {
     }
 
     getSelf() {
-        return this._authService.loggedInUser.id;
+        return this._authService.getId();
     }
 }

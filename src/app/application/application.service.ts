@@ -16,7 +16,7 @@ export class ApplicationService {
 
     getApplications(): Observable<any[]> {
         let headers = new Headers();
-        headers.append('Authorization','Bearer ' + sessionStorage.getItem('token'));
+        headers.append('Authorization','Bearer ' + localStorage.getItem('token'));
         let options = new RequestOptions({
             headers: headers
         });
@@ -26,7 +26,7 @@ export class ApplicationService {
 
     getApplication(id): Observable<any> {
         let headers = new Headers();
-        headers.append('Authorization','Bearer ' + sessionStorage.getItem('token'));
+        headers.append('Authorization','Bearer ' + localStorage.getItem('token'));
         let options = new RequestOptions({
             headers: headers
         });
@@ -34,9 +34,19 @@ export class ApplicationService {
             .map((response: Response) => { return response.json() });
     }
 
+    getApplicationsForUser(id) {
+        let headers = new Headers();
+        headers.append('Authorization','Bearer ' + localStorage.getItem('token'));
+        let options = new RequestOptions({
+            headers: headers
+        });
+        return this._http.get(environment.baseAddress + '/api/application/user/' + id, options)
+            .map((response: Response) => { return response.json() });
+    }
+
     createApplication(apply): Observable<any> {
         let headers = new Headers();
-        headers.append('Authorization','Bearer ' + sessionStorage.getItem('token'));
+        headers.append('Authorization','Bearer ' + localStorage.getItem('token'));
         let options = new RequestOptions({
             headers: headers
         });
@@ -46,7 +56,7 @@ export class ApplicationService {
 
     updateApplication(apply): Observable<any> {
         let headers = new Headers();
-        headers.append('Authorization','Bearer ' + sessionStorage.getItem('token'));
+        headers.append('Authorization','Bearer ' + localStorage.getItem('token'));
         let options = new RequestOptions({
             headers: headers
         });
@@ -56,7 +66,7 @@ export class ApplicationService {
 
     deleteApplication(id): Observable<any> {
         let headers = new Headers();
-        headers.append('Authorization','Bearer ' + sessionStorage.getItem('token'));
+        headers.append('Authorization','Bearer ' + localStorage.getItem('token'));
         let options = new RequestOptions({
             headers: headers
         });
@@ -66,7 +76,7 @@ export class ApplicationService {
 
     rateApplication(rate): Observable<any> {
         let headers = new Headers();
-        headers.append('Authorization','Bearer ' + sessionStorage.getItem('token'));
+        headers.append('Authorization','Bearer ' + localStorage.getItem('token'));
         let options = new RequestOptions({
             headers: headers
         });

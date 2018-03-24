@@ -31,9 +31,11 @@ export class LoginComponent {
             this.loginInvalid = true;
         }
         this._authService.login(this.loginForm.value).subscribe(resp => {
-            sessionStorage.setItem('token',resp.token);
+            localStorage.setItem('token',resp.token);
             this._authService.setLoggedInUser(resp.user);
-            sessionStorage.setItem('userName',resp.user.username);
+            localStorage.setItem('userName',resp.user.username);
+            localStorage.setItem('role',resp.user.role);
+            localStorage.setItem('id', resp.user.id);
             this._router.navigate(['animals']);
         });
     }

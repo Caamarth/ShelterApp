@@ -6,13 +6,19 @@ import { ApplicationService } from './application.service';
 import { ApplicationListComponent } from './application-list.component';
 import { ApplicationDetailsComponent } from './application-details.component';
 import { ApplicationUpdateComponent } from './application-update.component';
+import { ApplicationListSelfComponent } from './application-list-self.component';
+import { StudyService } from '../study/study.service';
+import { StudyComponent } from '../study/study.component';
+import { ApplicationCreateComponent } from './application-create.component';
 
 @NgModule({
     imports: [
         RouterModule.forChild([
             { path: 'applies', component: ApplicationListComponent },
+            { path: 'applies/self', component: ApplicationListSelfComponent },
             { path: 'apply/update/:id', component: ApplicationUpdateComponent },
-            { path: 'apply/:id', component: ApplicationDetailsComponent }
+            { path: 'apply/create/:id', component: ApplicationCreateComponent },
+            { path: 'apply/:id', component: ApplicationDetailsComponent },
         ]),
         FormsModule,
         ReactiveFormsModule,
@@ -22,10 +28,14 @@ import { ApplicationUpdateComponent } from './application-update.component';
     declarations: [
         ApplicationListComponent,
         ApplicationDetailsComponent,
-        ApplicationUpdateComponent
+        ApplicationUpdateComponent,
+        ApplicationListSelfComponent,
+        ApplicationCreateComponent,
+        StudyComponent
     ],
     providers: [
-        ApplicationService
+        ApplicationService,
+        StudyService
     ]
 })
 export class ApplicationModule {}

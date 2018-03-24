@@ -3,14 +3,37 @@
         {{animal?.name}}
     </div>
     <div class='card-content'>
-        {{animal?.race}}<br>
-        {{animal?.birthDate}}<br>
-        {{animal?.admissionDate}}<br>
-        {{animal?.weight}} kg<br>
-        {{animal?.width}} cm<br>
-        {{animal?.height}} cm<br>
-        {{animal?.length}} cm<br>
-        {{animal?.description}}<br>
+        <table>
+            <tr>
+                <td class="table-header">Faj</td>
+                <td>{{animal?.race}}</td>
+            </tr>
+            <tr>
+                <td class="table-header">Születési dátum</td>
+                <td>{{animal?.birthDate}}</td>
+            </tr>
+            <tr>
+                <td class="table-header">Bekerülés dátuma</td>
+                <td>{{animal?.admissionDate}}</td>
+            </tr>
+            <tr>
+                <td class="table-header">Súlya</td>
+                <td>{{animal?.weight}} kg</td>
+            </tr>
+            <tr>
+                <td class="table-header">Szélessége</td>
+                <td>{{animal?.width}} cm</td>
+            </tr>
+            <tr>
+                <td class="table-header">Magassága</td>
+                <td>{{animal?.height}} cm</td>
+            </tr>
+            <tr>
+                <td class="table-header">Hossza</td>
+                <td>{{animal?.length}} cm</td>
+            </tr>
+        </table>
+        <br>
     </div>
     <div>
         <button class="btn" (click)="openAnimal(animal.id)">Részletek</button>

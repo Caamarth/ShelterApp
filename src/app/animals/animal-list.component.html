@@ -1,5 +1,82 @@
 <div class="panel panel-primary">
-    <div class="panel-body" *ngFor="let animal of animalList">
-        <animal-card [animal]="animal"></animal-card>
+    
+    <div class="filter">
+        <form [formGroup]="filterForm" (submit)="filter()">
+        <h4>Találatok szűkítése</h4>
+        <table>
+            <tr class="row">
+                <td class="filter-header">Típus</td>
+                <td class="filter-value-container">
+                    <select class="form-control form-part filter-value" formControlName="raceType">
+                        <option value="0">Emlős</option>
+                        <option value="1">Madár</option>
+                        <option value="2">Rágcsáló</option>
+                        <option value="3">Hüllő</option>
+                        <option value="4">Kétéltű</option>
+                        <option value="5">Vízi</option>
+                    </select>
+                </td>
+            </tr>
+            <tr class="row">
+                <td class="filter-header">Neme</td>
+                <td class="filter-value-container">
+                    <select class="form-control form-part filter-value" formControlName="sex">
+                        <option value="0">Fiú</option>
+                        <option value="1">Lány</option>
+                    </select>
+                </td>
+            </tr>
+            <tr class="row">
+                <td class="filter-header">Tulajdonság</td>
+                <td class="filter-value-container">
+                    <select class="form-control form-part filter-value" formControlName="classification">
+                        <option value="0">Szelíd</option>
+                        <option value="1">Félős</option>
+                        <option value="2">Harapós</option>
+                        <option value="3">Lusta</option>
+                    </select>
+                    </td>
+            </tr>
+        </table>
+        <button type="submit" class="btn">Szűrés</button>
+        <button class="btn" (click)="resetFilter()">Visszaállítás</button>  
+        </form>
+
+        <h4>Rendezés</h4>
+        <table>
+            <tr>
+                <td class="filter-header">Iránya</td>
+                <td class="filter-value-container">
+                    <select [(ngModel)]="sortOrder">
+                        <option value="asc">Növekvő</option>
+                        <option value="desc">Csökkenő</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td class="filter-header">Szempont</td>
+                <td class="filter-value-container">
+                    <select [(ngModel)]="sortKey">
+                        <option value="name">Név</option>
+                        <option value="race">Faj</option>
+                        <option value="raceType">Típus</option>
+                        <option value="birthDate">Születési Dátum</option>
+                        <option value="admissionDate">Bekerülési dátum</option>
+                        <option value="weight">Súly</option>
+                        <option value="width">Szélesség</option>
+                        <option value="height">Magasság</option>
+                        <option value="length">Hossz</option>
+                        <option value="classification">Besorolás</option>
+                    </select>
+                </td>
+            </tr>
+        </table>
+        <button class="btn" (click)="sort()">Rendezés</button>
+    </div>
+
+    <div class="panel-body-container">
+        <div class="panel-body" *ngFor="let animal of filteredAnimals">
+            <animal-card [animal]="animal"></animal-card>
+        </div>
     </div>
 </div>

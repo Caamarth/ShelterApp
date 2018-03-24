@@ -11,3 +11,9 @@ export interface ApplicationModel {
     studies: any[];
     ratings: any[];
 }
+
+export interface ApplicationCreateModel {
+    animalId: number;
+    userId: number;
+    description: string;
+}
