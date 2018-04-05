@@ -1,7 +1,7 @@
 .card-container {
     float: left;
     width: 90%;
-    border-color: blue;
+    border-color: lightgray;
     border-width: 2px;
     border-style: solid;
     margin: 2.5%;
