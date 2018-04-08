@@ -37,4 +37,14 @@ export class AnimalService {
         return this._http.delete(environment.baseAddress + '/api/animal/'+ id)
             .map((response: Response) => { return response.json() });
     }
+
+    uploadImages(id, images): Observable<any> {
+        return this._http.post(environment.baseAddress + '/api/animal/images/'+ id, images)
+            .map((response: Response) => { return response.json() });
+    }
+
+    getImages(id): Observable<any> {
+        return this._http.get(environment.baseAddress + '/api/animal/images/' + id)
+            .map((response: Response) => { return response.json() });
+    }
 }

@@ -1,0 +1,82 @@
+<form [formGroup]="studyForm" (submit)="submitStudy()">
+    <div class="container-create" style="width: 60%; margin: auto">
+        <h1>{{study?.title}}</h1>
+        <div class="form-group">
+            <label for="rating">Értékelés</label>
+            <select class="form-control form-part" formControlName="rating">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="size">Lakás mérete (m2)</label>
+            <input class="form-control form-part" formControlName="size">
+        </div>
+        <div class="form-group">
+            <label for="numberOfRooms">Szobák száma</label>
+            <input class="form-control form-part" formControlName="numberOfRooms">
+        </div>
+        <div class="form-group">
+            <label for="numberOfPeople">Lakók száma</label>
+            <input class="form-control form-part" formControlName="numberOfPeople">
+        </div>
+        <div class="form-group">
+            <label for="NumberOfAnimals">Háziállatok száma</label>
+            <input class="form-control form-part" formControlName="numberOfAnimals">
+        </div>
+        <div class="form-group">
+            <label for="homeTypeLevel">Lakás típusa</label>
+            <select class="form-control form-part" formControlName="homeTypeLevel">
+                <option value="0">Kertes ház</option>
+                <option value="1">Lakás</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="comfortTypeLevel">Lakás komfortszintje</label>
+            <select class="form-control form-part" formControlName="comfortTypeLevel">
+                <option value="0">Összkomfortos</option>
+                <option value="1">Komfortos</option>
+                <option value="2">Félkomfortos</option>
+                <option value="3">Komfort nélküli</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="habitabilityLevel">Lakhatóság</label>
+            <select class="form-control form-part" formControlName="habitabilityLevel">
+                <option value="0">Kíváló</option>
+                <option value="1">Elfogadható</option>
+                <option value="2">Megkérdőjelezhető</option>
+                <option value="3">Nem elfogadható</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="cleanLevel">Tisztaság</label>
+            <select class="form-control form-part" formControlName="cleanLevel">
+                <option value="0">Kíváló</option>
+                <option value="1">Tiszta</option>
+                <option value="2">Elfogadható</option>
+                <option value="3">Rendetlen</option>
+                <option value="4">Nem elfogadható</option>
+            </select>
+        </div>
+        <div class="form-group form-part">
+            <label for="description">Leírás</label>
+            <textarea class="form-control" formControlName="description" style="height: 300px"></textarea>
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary"
+            [disabled]="!studyForm.valid">Mentés</button>
+            <button class="btn btn-primary" (click)="cancel()">Mégse</button>
+        </div>
+    </div>
+
+</form>

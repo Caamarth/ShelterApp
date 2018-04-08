@@ -1,55 +1,69 @@
+<h1>{{animal?.name}}</h1>
 <div class="table">
+    <div class="animal-image">
+        <table>
+            <tr>
+                <td>
+                    <img [attr.src]='images[0].animalImgs' alt=""/>
+                </td>
+            </tr>
+        </table>
+    </div>
     <table>
-        <thead>
-
-        </thead>
         <tbody>
             <tr>
-                <td>Név:</td>
-                <td>{{animal?.name}}</td>
+                <td class="header">Neme:</td>
+                <td class="td-content">{{sexToString(animal?.sex)}}</td>
             </tr>
             <tr>
-                <td>Neme:</td>
-                <td>{{animal?.sex}}</td>
+                <td class="header">Fajta:</td>
+                <td class="td-content">{{animal?.race}}</td>
             </tr>
             <tr>
-                <td>Fajta:</td>
-                <td>{{animal?.race}}</td>
+                <td class="header">Születési dátum:</td>
+                <td class="td-content">{{animal?.birthDate}}</td>
             </tr>
             <tr>
-                <td>Születési dátum:</td>
-                <td>{{animal?.birthDate}}</td>
+                <td class="header">Bekerülés ideje:</td>
+                <td class="td-content">{{animal?.admissionDate}}</td>
             </tr>
             <tr>
-                <td>Bekerülés ideje:</td>
-                <td>{{animal?.admissionDate}}</td>
+                <td class="header">Súlya:</td>
+                <td class="td-content">{{animal?.weight}}</td>
             </tr>
             <tr>
-                <td>Súlya:</td>
-                <td>{{animal?.weight}}</td>
+                <td class="header">Szélessége:</td>
+                <td class="td-content">{{animal?.width}}</td>
             </tr>
             <tr>
-                <td>Szélessége:</td>
-                <td>{{animal?.width}}</td>
+                <td class="header">Magassága:</td>
+                <td class="td-content">{{animal?.height}}</td>
             </tr>
             <tr>
-                <td>Magassága:</td>
-                <td>{{animal?.height}}</td>
+                <td class="header">Hossza:</td>
+                <td class="td-content">{{animal?.length}}</td>
             </tr>
             <tr>
-                <td>Hossza:</td>
-                <td>{{animal?.length}}</td>
+                    <td class="header">Természete:</td>
+                    <td class="td-content">{{classToString(animal?.classification)}}</td>
             </tr>
             <tr>
-                <td>Leírás:</td>
-                <td>{{animal?.description}}</td>
+                <td class="header-desc">Leírás:</td>
+                <td class="td-content-desc">{{animal?.description}}</td>
             </tr>
-            <tr>
-                <td>Természete:</td>
-                <td>{{animal?.classification}}</td>
-            </tr>
+            
         </tbody>
     </table>
+    <div class="gallery-container">
+        <h4>{{animal?.name}} képei</h4>
+        <table class="gallery">
+                <tr>
+                    <td *ngFor="let image of images">
+                        <img [attr.src]='image.animalImgs' alt=""/>
+                    </td>
+                </tr>
+        </table>
+    </div>
     <button class="btn" (click)="applyForAnimal(animal.id)">Befogadom</button>
     <button class="btn" (click)="returnToMain()">Vissza</button>
 </div>

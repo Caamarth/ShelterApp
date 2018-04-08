@@ -6,6 +6,7 @@
 }
 
 .navbar-default {
+    background-color: rgba(150, 255, 255, 0.474);
     margin: auto;
     margin-bottom: 12px;
 }

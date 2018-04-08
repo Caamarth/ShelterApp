@@ -11,6 +11,7 @@ export class AnimalComponent implements OnInit {
 
     animal: AnimalModel
     id: number;
+    images: string[];
 
     constructor(
         private _activatedRoute: ActivatedRoute,
@@ -27,7 +28,11 @@ export class AnimalComponent implements OnInit {
 
         subscription.subscribe(data => {
             this.animal = data;
-            console.log(data);
+            this._animalService.getImages(this.animal.id).subscribe(response => {
+                if (response) {
+                    this.images = response;
+                }
+            });
         }, error => { console.log(error) });
     }
 
@@ -35,6 +40,29 @@ export class AnimalComponent implements OnInit {
 
     applyForAnimal(id) {
         this._router.navigate(['apply','create', id]);
+    }
+
+    sexToString(value) {
+        if (value === 0) {
+            return 'Fiú';
+        }
+        else {
+            return 'Lány';
+        }
+    }
+
+    classToString(value) {
+        if (value === 0) {
+            return 'Szelíd';
+        }
+        if (value === 1) {
+            return 'Félős';
+        }
+        if (value === 2) {
+            return 'Harapós';
+        } else {
+            return 'Lusta';
+        }
     }
 
     returnToMain() {
