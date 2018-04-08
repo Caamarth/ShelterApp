@@ -10,6 +10,8 @@ import { ApplicationListSelfComponent } from './application-list-self.component'
 import { StudyService } from '../study/study.service';
 import { StudyComponent } from '../study/study.component';
 import { ApplicationCreateComponent } from './application-create.component';
+import { CreateStudyComponent } from '../study/create-study.component';
+import { UpdateStudyComponent } from '../study/update-study.component';
 
 @NgModule({
     imports: [
@@ -19,6 +21,8 @@ import { ApplicationCreateComponent } from './application-create.component';
             { path: 'apply/update/:id', component: ApplicationUpdateComponent },
             { path: 'apply/create/:id', component: ApplicationCreateComponent },
             { path: 'apply/:id', component: ApplicationDetailsComponent },
+            { path: 'apply/study/create/:id', component: CreateStudyComponent },
+            { path: 'apply/study/:id', component: UpdateStudyComponent}
         ]),
         FormsModule,
         ReactiveFormsModule,
@@ -31,7 +35,9 @@ import { ApplicationCreateComponent } from './application-create.component';
         ApplicationUpdateComponent,
         ApplicationListSelfComponent,
         ApplicationCreateComponent,
-        StudyComponent
+        StudyComponent,
+        CreateStudyComponent,
+        UpdateStudyComponent
     ],
     providers: [
         ApplicationService,

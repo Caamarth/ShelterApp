@@ -14,10 +14,10 @@
                 </thead>
                 <tbody>
                     <tr *ngFor="let study of studies">
-                        <td>{{study?.title}}</td>
-                        <td>{{study?.publishDate}}</td>
-                        <td>{{study?.description}}</td>
-                        <td>{{study?.rating}}</td>
+                        <td style="width: 10%">{{study?.title}}</td>
+                        <td style="width: 10%">{{study?.publishDate}}</td>
+                        <td style="width: 60%">{{study?.description}}</td>
+                        <td style="width: 10%">{{study?.rating}}</td>
                         <td>
                             <button class="btn btn-primary" (click)="openStudy(study.id)">
                                 <i class="fa fa-pencil"></i>

@@ -32,13 +32,34 @@ export class StudyService {
             .map((response: Response) => { return response.json() });
     }
 
+    createStudy(study: any) {
+        let headers = new Headers();
+        headers.append('Authorization','Bearer ' + localStorage.getItem('token'));
+        let options = new RequestOptions({
+            headers: headers
+        });
+        console.log(study);
+        return this._http.post(environment.baseAddress + '/api/study/', study, options)
+            .map((response: Response) => { return response.json() });
+    }
+
     updateStudy(study, id) {
         let headers = new Headers();
         headers.append('Authorization','Bearer ' + localStorage.getItem('token'));
         let options = new RequestOptions({
             headers: headers
         });
-        return this._http.post(environment.baseAddress + '/api/study/' + id, study, options)
+        return this._http.put(environment.baseAddress + '/api/study/' + id, study, options)
+            .map((response: Response) => { return response.json() });
+    }
+
+    deleteStudy(id) {
+        let headers = new Headers();
+        headers.append('Authorization','Bearer ' + localStorage.getItem('token'));
+        let options = new RequestOptions({
+            headers: headers
+        });
+        return this._http.delete(environment.baseAddress + '/api/study/' + id, options)
             .map((response: Response) => { return response.json() });
     }
 }

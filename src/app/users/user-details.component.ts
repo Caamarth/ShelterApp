@@ -44,7 +44,6 @@ export class UserDetailsComponent implements OnInit {
             });
 
         subscription.subscribe(user => {
-            console.log(user);
             this.currentUser = user;
 
             if (user) {
