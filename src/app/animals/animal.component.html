@@ -58,7 +58,7 @@
         <h4>{{animal?.name}} képei</h4>
         <table class="gallery">
                 <tr>
-                    <td *ngFor="let image of images">
+                    <td class="gallery-image" *ngFor="let image of images">
                         <img [attr.src]='image.animalImgs' alt=""/>
                     </td>
                 </tr>
